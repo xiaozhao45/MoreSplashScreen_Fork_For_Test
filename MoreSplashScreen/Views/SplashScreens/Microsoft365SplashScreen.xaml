@@ -16,8 +16,10 @@
         TextElement.Foreground="#757575"
         ResizeMode="NoResize"
         Closed="Microsoft365SplashScreen_OnClosed"
+        Background="{x:Null}"
+        AllowsTransparency="True"
         DataContext="{Binding RelativeSource={RelativeSource Self}}">
-    <Grid>
+    <Border Background="White" CornerRadius="8">
         <!--<Image Source="/MoreSplashScreen;component/ref.png" Stretch="Fill"/>-->
         <Grid Margin="8,8,8,8">
             <Border Background="#80DFFF"
@@ -46,5 +48,5 @@
                         Margin="2 -4"/>
             </StackPanel>
         </Grid>
-    </Grid>
+    </Border>
 </ci:SplashWindowBase>

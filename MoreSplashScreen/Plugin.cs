@@ -37,6 +37,9 @@ public class Plugin : PluginBase
             case 2:  // Microsoft 365
                 services.AddTransient<SplashWindowBase, Microsoft365SplashScreen>();
                 break;
+            case 3:  // Office old
+                services.AddTransient<SplashWindowBase, OfficeLegacySplashScreen>();
+                break;
         }
     }
 }
