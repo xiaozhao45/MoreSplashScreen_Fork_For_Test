@@ -55,7 +55,7 @@
                            Margin="6,-4,0,0"
                            FontSize="14">
                     <Run Text="{x:Static ci:AppBase.AppCodeName}" FontWeight="Medium"/>
-                    <Run Text="//" />
+                    <Run Text="//" Foreground="#686868"/>
                     <Run Text="{x:Static ci:AppBase.AppVersion}" Foreground="#686868"/>
                 </TextBlock>
                 <TextBlock Grid.Column="1" Grid.Row="2" Margin="6,8,0,0"
