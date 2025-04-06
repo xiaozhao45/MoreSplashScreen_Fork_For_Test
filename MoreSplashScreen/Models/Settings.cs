@@ -20,4 +20,6 @@ public partial class Settings : ObservableObject
     [ObservableProperty] private bool _isCustomAndroidStudioSplashImageEnabled = false;
 
     [ObservableProperty] private string _customAndroidStudioSplashImagePath = "";
+
+    [ObservableProperty] private int _customAndroidStudioSplashImageKind = 0;
 }

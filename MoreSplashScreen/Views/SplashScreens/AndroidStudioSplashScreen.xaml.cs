@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClassIsland.Core;
 using ClassIsland.Core.Abstractions.Services;
 
 namespace MoreSplashScreen.Views.SplashScreens;
@@ -23,6 +24,7 @@ namespace MoreSplashScreen.Views.SplashScreens;
 public partial class AndroidStudioSplashScreen
 {
     public ISplashService SplashService { get; }
+    public Plugin Plugin { get; }
 
     public static readonly DependencyProperty CurrentProgressProperty = DependencyProperty.Register(
         nameof(CurrentProgress), typeof(double), typeof(AndroidStudioSplashScreen), new PropertyMetadata(0.0));
@@ -38,13 +40,35 @@ public partial class AndroidStudioSplashScreen
 
     private bool _canClose = false;
 
-    public AndroidStudioSplashScreen(ISplashService splashService)
+    public BitmapImage? SplashImage { get; }
+
+    public AndroidStudioSplashScreen(ISplashService splashService, Plugin plugin)
     {
         SplashService = splashService;
+        Plugin = plugin;
+        SplashImage = GetSplashImage();
         InitializeComponent();
 
         SplashService.SplashEnded += SplashServiceOnSplashEnded;
         SplashService.ProgressChanged += SplashServiceOnProgressChanged;
+    }
+
+    private BitmapImage? GetSplashImage()
+    {
+        try
+        {
+            return Plugin.Settings.IsCustomAndroidStudioSplashImageEnabled ? new BitmapImage(new Uri(Plugin.Settings.CustomAndroidStudioSplashImagePath, UriKind.RelativeOrAbsolute)) : GetDefaultSplashImage();
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
+        
+    }
+
+    private BitmapImage GetDefaultSplashImage()
+    {
+        return new BitmapImage(new Uri($"/MoreSplashScreen;component/Assets/AndroidStudio/{AppBase.AppCodeName}.png", UriKind.RelativeOrAbsolute));
     }
 
     private void SplashServiceOnSplashEnded(object? sender, EventArgs e)

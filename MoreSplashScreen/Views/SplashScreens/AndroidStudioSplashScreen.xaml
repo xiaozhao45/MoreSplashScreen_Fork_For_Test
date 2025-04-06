@@ -29,7 +29,7 @@
             </RectangleGeometry>
         </Border.Clip>
         <Grid>
-            <Image Source="/MoreSplashScreen;component/Assets/AndroidStudio/Griseo.png" />
+            <Image Source="{Binding SplashImage}" Stretch="UniformToFill"/>
 
             <Grid VerticalAlignment="Top" HorizontalAlignment="Left"
                   Margin="400,32,0,0">

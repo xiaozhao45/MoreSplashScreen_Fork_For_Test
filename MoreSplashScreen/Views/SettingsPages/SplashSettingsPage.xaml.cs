@@ -25,6 +25,12 @@ public partial class SplashSettingsPage
 {
     public Plugin Plugin { get; }
 
+    public static readonly Dictionary<string, string> InternalImages = new()
+    {
+        {"Griseo", "/MoreSplashScreen;component/Assets/AndroidStudio/Griseo.png"},
+        {"RyouYamada", "/MoreSplashScreen;component/Assets/AndroidStudio/RyouYamada.png"}
+    };
+
     public SplashSettingsPage(Plugin plugin)
     {
         Plugin = plugin;
