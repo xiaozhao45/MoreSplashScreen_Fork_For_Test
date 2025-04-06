@@ -30,13 +30,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: |
-            ./ClassIslandHide/cipx/*
+            ./MoreSplashScreen/cipx/*
       
       - name: Upload APP to release
         uses: ncipollo/release-action@v1
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         with:
-          artifacts: "./ClassIslandHide/cipx/*.cipx"
+          artifacts: "./MoreSplashScreen/cipx/*.cipx"
           draft: true
-          bodyFile: ./ClassIslandHide/cipx/checksums.md
+          bodyFile: ./MoreSplashScreen/cipx/checksums.md
           token: ${{ secrets.GITHUB_TOKEN }}
