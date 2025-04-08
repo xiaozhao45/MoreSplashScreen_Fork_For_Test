@@ -40,6 +40,9 @@ public class Plugin : PluginBase
             case 3:  // Office old
                 services.AddTransient<SplashWindowBase, OfficeLegacySplashScreen>();
                 break;
+            case 4:
+                services.AddTransient<SplashWindowBase, IslandSplashScreen>();
+                break;
         }
     }
 }
