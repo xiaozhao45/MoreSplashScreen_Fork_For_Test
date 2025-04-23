@@ -39,6 +39,7 @@
                             <ComboBoxItem>Microsoft Office (旧)</ComboBoxItem>
                             <ComboBoxItem>JetBrains IDEs</ComboBoxItem>
                             <ComboBoxItem>dotUltimate</ComboBoxItem>
+                            <ComboBoxItem>IslandOnTop</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                 </ci:SettingsCard.Switcher>
